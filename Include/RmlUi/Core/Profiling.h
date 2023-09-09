@@ -31,8 +31,10 @@
 
 #ifdef RMLUI_ENABLE_PROFILING
 
-	#define TRACY_ENABLE
-	#include <tracy/Tracy.hpp>
+	// #define TRACY_ENABLE
+	#undef max
+	#undef min
+	#include "../git_submodules/tracy/public/tracy/Tracy.hpp"
 
 	#define RMLUI_ZoneNamed(varname, active) ZoneNamed(varname, active)
 	#define RMLUI_ZoneNamedN(varname, name, active) ZoneNamedN(varname, name, active)
