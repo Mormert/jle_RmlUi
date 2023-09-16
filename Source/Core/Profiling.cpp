@@ -32,17 +32,4 @@
 	// #include <TracyClient.cpp>
 	#include <memory>
 
-void* operator new(std::size_t n)
-{
-	// Overload global new and delete for memory inspection
-	void* ptr = malloc(n);
-	TracyAlloc(ptr, n);
-	return ptr;
-}
-void operator delete(void* ptr) noexcept
-{
-	TracyFree(ptr);
-	free(ptr);
-}
-
 #endif
